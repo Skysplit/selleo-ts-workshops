@@ -6,7 +6,7 @@
  * https://basarat.gitbook.io/typescript/type-system/interfaces#classes-can-implement-interfaces
  */
 
-import { ManTruck, Vehicle } from "./classes";
+import { FileDocument, ManTruck, Vehicle } from "./classes";
 
 describe("#classes", () => {
   describe("#Car", () => {
@@ -17,7 +17,7 @@ describe("#classes", () => {
       expect(vehicle.brand).toEqual("toyota");
       expect(vehicle.model).toEqual("yaris");
       expect(vehicle.speed).toEqual(50);
-      expect(await vehicle.accelarate(15)).toEqual(65);
+      expect(await vehicle.accelerate(15)).toEqual(65);
       expect(vehicle.speed).toEqual(65);
       expect(await vehicle.decelerate(25)).toEqual(40);
       expect(vehicle.speed).toEqual(40);
@@ -28,6 +28,7 @@ describe("#classes", () => {
     test("should carry payload", async () => {
       const truck = new ManTruck("TGX", 0);
 
+      expect(truck).toBeInstanceOf(Vehicle);
       expect(truck.brand).toEqual("Man");
       expect(truck.model).toEqual("TGX");
       expect(truck.speed).toEqual(0);
@@ -40,7 +41,7 @@ describe("#classes", () => {
 
   describe("#Document", () => {
     test("should behave like paper", () => {
-      const document = new Document(
+      const document = new FileDocument(
         "Very important document",
         "first page",
         "second page"
@@ -61,7 +62,7 @@ describe("#classes", () => {
     });
 
     test("should allow creating multiple initial pages", () => {
-      const document = new Document(
+      const document = new FileDocument(
         "title",
         "first",
         "second",

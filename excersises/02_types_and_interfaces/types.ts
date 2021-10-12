@@ -1,3 +1,3 @@
-export type NumberOrString = never;
+export type NumberOrString = number | string;
 
-export type ArrayOfStringsAndNumbers = never;
+export type ArrayOfStringsAndNumbers = (string | number)[];
