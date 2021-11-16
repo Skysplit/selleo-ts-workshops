@@ -35,8 +35,8 @@ describe("#generics", () => {
       const match1: number = result1;
       const match2: string = result2;
 
-      expect(match1).toBeInstanceOf(Number);
-      expect(match2).toBeInstanceOf(String);
+      expect(match1).toEqual(expect.any(Number));
+      expect(match2).toEqual(expect.any(String));
     });
   });
 

@@ -17,7 +17,7 @@ describe("#operators", () => {
             return store + action.summand;
           }
           case "subtract": {
-            return store + action.subtrahend;
+            return store - action.subtrahend;
           }
         }
       }
