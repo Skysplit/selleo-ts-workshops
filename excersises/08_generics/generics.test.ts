@@ -58,7 +58,7 @@ describe("#generics", () => {
     });
 
     it("should modify stored values", () => {
-      const keyValue = new KeyValue("bar", 33);
+      const keyValue = new KeyValue("bar" as string, 33);
 
       expect(keyValue.setPair("baz", 3)).toEqual(["baz", 3]);
       expect(keyValue.getKey()).toEqual("baz");
