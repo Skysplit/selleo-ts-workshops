@@ -1,3 +1,6 @@
 interface Car {
-  // fix me!
+  brand: "ford" | "toyota";
+  model: string;
+  doors: number;
+  leftHanded: boolean;
 }
